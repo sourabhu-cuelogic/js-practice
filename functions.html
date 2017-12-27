@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<h2>Functions practice</h2>
+
+	<p>Functions invocation and clouser etc.</p>
+
+	<script>
+		
+		// Function calling with prototype
+		var Circle = function () {
+			this.shapeName = "Circle";
+			this.shapeColor = "white";
+			this.show = function() {
+				document.write("Part of Circle!");
+				document.write("<br />");
+			}
+		}
+		
+		Circle.prototype.info = function() {
+			document.write("Shape is " + this.shapeName + " and its color is " + this.shapeColor);
+			document.write("<br />");
+		}
+
+		var circle = new Circle();
+		circle.info();
+		circle.show();
+
+	</script>
+
+</body>
+
+</html>

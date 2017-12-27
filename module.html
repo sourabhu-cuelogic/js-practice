@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Module pattern</h2>
+
+    <script>
+        var Module = function ( ) {
+            var privateVariable = "some value",
+            privateMethod = function ( ) {
+                document.write("private method called!");
+            };
+
+            return {
+                publicMethod : function ( ) {
+                   alert(privateVariable);
+                   privateMethod( );
+                }
+            };
+        };
+       var mod = new Module();
+       mod.publicMethod();
+    </script>
+
+</body>
+
+</html>

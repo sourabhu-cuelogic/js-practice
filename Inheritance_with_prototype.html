@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Inheritance and prototype in JS</h2>
+
+    <script>
+        var Shape = function () {
+            this.shapeName = "none";
+            this.shapeColor = "none";
+        }
+        Shape.prototype.redius = '1';
+        Shape.prototype.draw = function () {
+            return "Drawing " + this.shapeName;
+        }
+
+        var Circle = function (shapeName) {
+            this.shapeName = shapeName;
+        }
+
+		// Inheritance
+        Circle.prototype = new Shape();
+        Circle.prototype.redius = "2";
+
+        var circle = new Circle("Circle");
+        
+        document.write(circle.redius);
+        console.log(Shape.prototype);
+        document.write("<br />");
+		// instanceOf use
+        document.write(circle instanceof Circle);
+        document.write("<br />");
+        document.write(circle instanceof Shape);
+    </script>
+
+</body>
+
+</html>

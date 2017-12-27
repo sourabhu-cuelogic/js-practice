@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>IIFE with Exception handling in JS</h2>
+    <p> Error message here: <span id="error" style="color:red;"></span></p>
+    <p id="info" style="color:green;"></p>
+     <script>
+        (function(){
+        	var foo = "bar";
+        	document.write(foo);
+        })();
+        try {
+        	// Trying to access private variable.
+        	// This is raise error
+            document.write(foo);
+        }
+        catch(err) {
+        	document.getElementById("error").innerHTML = err.message;
+        }
+        finally {
+        	document.getElementById("info").innerHTML = "Finally statement executes!"
+        }
+    </script>
+</body>
+</html>
+
