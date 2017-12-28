@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h2>Prototype</h2>
+	<script>
+		function Person(first, last, age, eyecolor) {
+			this.firstName = first;
+			this.lastName = last;
+			this.age = age;
+			this.eyeColor = eyecolor;
+		}
+		var per = Object.create(Person);
+		document.write("Person is prototype of :" + Object.prototype.isPrototypeOf(per));
+		document.write("<br>")
+		var myFather = new Person("John", "Doe", 50, "blue");
+		var myMother = new Person("Sally", "Rally", 48, "green");
+		Person.prototype.hairColor = "Black!";
+		document.write(myFather.hairColor);
+		document.write("<br>");
+
+		// Prototype methods
+		obj = new Object();
+		obj.prop = 'exists';
+		document.write("Prototype hasOwnProperty 'prop' : " + obj.hasOwnProperty('prop'));
+		document.write("<br>");
+		document.write("Prototype hasOwnProperty 'toString' : " + obj.hasOwnProperty('toString'));
+		document.write("<br>");
+		document.write("Prototype hasOwnProperty 'setPrototypeOf' => " + obj.hasOwnProperty('setPrototypeOf'));
+		document.write("<br>");
+	</script>
+</body>
+
+</html>
